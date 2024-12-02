@@ -1,9 +1,11 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Button } from "react-native";
 
 export default function Index() {
+  let count = 0
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>HomePage</Text>
+      <Text style={styles.text}>{count}</Text>
+      <Button title="Add" onPress={()=>{count+=1; console.log(count)}}></Button>
     </View>
   );
 }
