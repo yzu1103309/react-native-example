@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
+import useSWR from "swr";
 
 export default function Temperature()
 {
-    const [count, setCount] = useState(0);
-    return(<View style={styles.container}>
-      <Text style={[styles.text, {margin: 10}]}>目前溫度：{count}度</Text>
-      <Button title="Refresh" onPress={()=>{setCount(count+1)}}></Button>
-    </View>)
+    let {data, error, mutate} = useSWR(['latest', {throwHttpErrors: true}])
+    return(
+      <View style={styles.container}>
+        {!!error && <Text style={[styles.text, {margin: 10, color: 'red'}]}>Error Occurs!</Text>}
+        {!!data && !error && 
+          <Text style={[styles.text, {margin: 10}]}>
+            目前溫度：{data.data.temp}度
+          </Text>
+        }
+        <Button title="Refresh" onPress={()=>mutate()}></Button>
+      </View>
+    )
 }
 
 const styles = StyleSheet.create({

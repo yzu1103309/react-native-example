@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { View, StyleSheet, Button } from "react-native";
 import { Link } from "expo-router";
 
