@@ -5,7 +5,7 @@ import { Link } from "expo-router";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Link style={styles.text} href={'/temperature'}>View Temperature</Link>
+      <Link style={[styles.text, {textDecorationLine: 'underline'}]} href={'/temperature'}>View Temperature</Link>
     </View>
   );
 }
