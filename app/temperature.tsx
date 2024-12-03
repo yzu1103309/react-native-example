@@ -4,6 +4,7 @@ import useSWR from "swr";
 export default function Temperature()
 {
     let {data, error, mutate} = useSWR(['latest', {throwHttpErrors: true}])
+    console.log(error)
     return(
       <View style={styles.container}>
         {!!error && <Text style={[styles.text, {margin: 10, color: 'red'}]}>Error Occurs!</Text>}
@@ -12,7 +13,7 @@ export default function Temperature()
             目前溫度：{data.data.temp}度
           </Text>
         }
-        <Button title="Refresh" onPress={()=>mutate()}></Button>
+        {/* <Button title="Refresh" onPress={()=>mutate()}></Button> */}
       </View>
     )
 }

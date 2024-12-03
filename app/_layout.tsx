@@ -7,7 +7,8 @@ export default function RootLayout() {
     <SWRConfig
       value={{
         shouldRetryOnError: false,
-        fetcher: defaultFetcher
+        fetcher: defaultFetcher,
+        refreshInterval: 2000
       }}
     >
       <Stack>
