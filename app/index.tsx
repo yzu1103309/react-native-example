@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet, Button } from "react-native";
+import { Link } from "expo-router";
 
 export default function Index() {
-  const [count, setCount] = useState(0);
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{count}</Text>
-      <Button title="Add" onPress={()=>{setCount(count+1)}}></Button>
+      <Link style={styles.text} href={'/temperature'}>View Temperature</Link>
     </View>
   );
 }
@@ -18,6 +17,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text:{
-    fontSize: 30
+    fontSize: 20
   }
 });
