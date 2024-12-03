@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import useSWR from "swr";
 

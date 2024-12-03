@@ -2,7 +2,7 @@ import ky from "ky";
 import { apiPrefix } from "@/constants";
 
 const client = ky.extend({
-    prefixUrl: "http://140.138.150.20/G0_api/",
+    prefixUrl: apiPrefix,
     headers: {
       'X-No-CSRF': '1',
     },
