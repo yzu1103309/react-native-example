@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { SWRConfig } from "swr";
 import { defaultFetcher } from "@/api/fetcher";
+import { ThemeProvider } from 'react-native-ios-kit';
 
 export default function RootLayout() {
   return (
@@ -11,11 +12,13 @@ export default function RootLayout() {
         refreshInterval: 2000
       }}
     >
+      <ThemeProvider>
       <Stack>
         <Stack.Screen name="index" options={{title: "Home", headerShown: false}} />
         <Stack.Screen name="temperature" options={{title: "Temperature"}}/>
         <Stack.Screen name="moisture" options={{title: "Moisture"}}/>
       </Stack>
+      </ThemeProvider>
     </SWRConfig>
   );
 }
