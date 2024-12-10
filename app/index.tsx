@@ -5,6 +5,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Link style={[styles.text, {textDecorationLine: 'underline'}]} href={'/temperature'}>View Temperature</Link>
+      <Link style={[styles.text, {textDecorationLine: 'underline', marginTop: 20}]} href={'/moisture'}>View Moisture</Link>
     </View>
   );
 }
