@@ -14,7 +14,7 @@ export default function RootLayout() {
     >
       <ThemeProvider>
       <Stack>
-        <Stack.Screen name="index" options={{title: "Home", headerShown: false}} />
+        <Stack.Screen name="(tabs)" options={{title: "Home", headerShown: false}} />
         <Stack.Screen name="temperature" options={{title: "Temperature"}}/>
         <Stack.Screen name="moisture" options={{title: "Moisture"}}/>
       </Stack>
